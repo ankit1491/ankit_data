@@ -23,8 +23,4 @@ def mask_mobile_func(colval):
 
 # COMMAND ----------
 
-mask_mobile_func('7387911442')
-
-# COMMAND ----------
-
 
