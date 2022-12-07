@@ -1,4 +1,5 @@
 # Databricks notebook source
+# DBTITLE 1,Masking Data in column in Pyspark
 df1 = spark.read.format("csv").option("header","true").load("/FileStore/tables/Masking.csv")
 display(df1)
 
@@ -17,8 +18,12 @@ def mask_email_func(coval):
 def mask_mobile_func(colval):
     n = len(colval)
     charlist = list(colval)
-    charlist[2:int(n-1)] = '*'*int(n-4)
+    charlist[2:int(n-2)] = '*'*int(n-4)
     return "".join(charlist)
+
+# COMMAND ----------
+
+mask_mobile_func('7387911442')
 
 # COMMAND ----------
 
